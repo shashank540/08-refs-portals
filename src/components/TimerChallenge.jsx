@@ -13,7 +13,7 @@ export default function TimerChallenge({title, targetTime})
         timer.current = setTimeout(() => {
             setTimerExpired(true);
             //dialog.current.showModal();
-            dialog.current?.showModal();
+            dialog.current?.open();
         }, targetTime * 1000);
 
         setTimerStarted(true);
@@ -23,7 +23,7 @@ export default function TimerChallenge({title, targetTime})
         clearTimeout(timer.current);
         setTimerExpired(false);
         setTimerStarted(false);
-        dialog.current.close();
+        dialog.current?.close();
     }
 
     return(
